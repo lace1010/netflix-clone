@@ -21,3 +21,5 @@
 // const listener = app.listen(process.env.PORT || 3000, () => {
 //   console.log("Your app is listening on port " + listener.address().port);
 // });
+
+// Can use this to deploy on heroku, decided to do front end on netlify just to get used to something else
