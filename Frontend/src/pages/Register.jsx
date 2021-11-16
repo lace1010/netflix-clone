@@ -103,7 +103,7 @@ const Register = () => {
     const email = state;
     const [errorMessage, setErrorMessage] = useState("")
     const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
         let email = e.target.email.value;
@@ -127,8 +127,10 @@ const Register = () => {
                     navigate("/sign-in");
                 });
         }
+
     }
     return (
+
         <div style={{backgroundColor:"white"}}>
              <NavbarRegister />
             <Container>
@@ -136,11 +138,15 @@ const Register = () => {
                     <Title>Create a password to start your membership</Title>
                     <Subtitle>Just a few more steps and you're done! We hate paperwork, too.</Subtitle>
                     <InputBox>
-                        <Input error={errorMessage.includes("email") ? "border 1px solid red" : "1px solid grey"} name="email" defaultValue={email} required/><InputPlaceholder>Email address</InputPlaceholder>
+                        <Input error={errorMessage.includes("email") ? "1px solid red" : "1px solid grey"} 
+                            name="email" defaultValue={email} required/>
+                        <InputPlaceholder>Email address</InputPlaceholder>
                     </InputBox>
                     {errorMessage.includes("email") && <Error>{errorMessage}</Error>}
                     <InputBox>
-                        <Input type="password" name="password" required/><InputPlaceholder>Add a password</InputPlaceholder>
+                        <Input error={errorMessage.includes("Password") ? "1px solid red" : "1px solid grey"} 
+                            type="password" name="password" required/>
+                        <InputPlaceholder>Add a password</InputPlaceholder>
                     </InputBox>
                     {errorMessage.includes("Password") && <Error>{errorMessage}</Error>}
                     <OfferText><Checkbox type="checkbox"/>Please do not email me Netflix special offers.</OfferText>
