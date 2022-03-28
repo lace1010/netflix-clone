@@ -7,6 +7,9 @@ import Register from "./pages/Register";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
+  // to hide /browse from people not logged in we would need to set up
+  // Redux and stor a user variable. Then use a condition to when
+  // rendering If true then display. If not then redirect to register/sign-in page.
   return (
     <div>
       <BrowserRouter>
